@@ -53,3 +53,16 @@ dkms.conf
 
 # debug information files
 *.dwo
+# STM32CubeIDE Build Artifacts
+Debug/
+Release/
+*.elf
+*.map
+*.hex
+*.bin
+*.list
+*.su
+*.launch
+
+# Các file tạm khác của CubeMX sinh ra khi cấu hình chip
+*.mxproject
