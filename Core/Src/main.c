@@ -176,6 +176,10 @@ int main(void)
       	state_of_button1 = BUTTON_PAUSE;
 
 	  }
+	  if (count == 9)
+	  {
+		  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_2);
+	  }
 
 
   }
@@ -364,7 +368,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	        		state_of_button1 = BUTTON_START;
 	        	}
 	        	++state_of_button1;
-	            HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_2);
 	            last_time1 = current_time;
 	        }
 	    }
@@ -374,8 +377,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		        if (current_time - last_time2 > 200)
 		        {
 		             state_of_button1 = BUTTON_RESET;
-
-		            HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_2);
 		            last_time2 = current_time;
 		        }
 		    }
